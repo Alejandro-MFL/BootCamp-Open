@@ -1,22 +1,23 @@
-const Hello = () => {
+//npm run dev
+
+const Hello = (props) => {
+    console.log(props)
     return (
         <div>
-            <p>Hello world</p>
+            <p>
+                Hello {props.name}, you are {props.age} years old
+            </p>
         </div>
     )
 }
 
+
 const App = () => {
-    const now = new Date()
-    const a = 10
-    const b = 20
-    console.log(now, a + b)
+    const friends = ['Peter', 'Maya']
+
     return (
         <div>
-            <h1>Greetings</h1>
-            <Hello />
-            <Hello />
-            <Hello />
+            <p>{friends}</p>
         </div>
     )
 }
