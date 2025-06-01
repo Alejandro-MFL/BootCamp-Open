@@ -112,3 +112,29 @@ function findJavaScript(matrix) {
     }
     return [-1, -1];
 }
+/*Algoritmos con Arrays
+ 
+ En una biblioteca queremos saber qué libro es el que menos páginas tiene y el que más páginas. Por suerte, no hay dos libros con el mismo número de páginas.
+Necesitamos que la función reciba un array de números, sin ordenar, y que devuelva un array de dos posiciones con el índice del libro con menos páginas y el índice del libro con más páginas.
+ */
+
+//Usando metodos, pocas lineas y facil de leer. Problema: Recorre demasiadas veces el array
+function minAndMaxWord(words) {
+    const libroGrande = Math.max(...words)
+    const libroPequeño = Math.min(...words)
+    const indexPequeño = words.indexOf(libroPequeño)
+    const indexGrande = words.indexOf(libroGrande)
+    return [indexPequeño, indexGrande]
+}
+
+//Reduciendo la complejidad logarítmica
+
+function minAndMaxWord(words) {
+    let indexPequeño = 0
+    let indexGrande = 0
+    for (let i = 1; i < words.length; i++) {
+        if (words[i] > words[indexGrande]) { indexGrande = i }
+        if (words[i] < words[indexPequeño]) { indexPequeño = i }
+    }
+    return [indexPequeño,indexGrande]
+}
