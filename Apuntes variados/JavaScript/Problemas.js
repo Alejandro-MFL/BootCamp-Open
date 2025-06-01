@@ -69,3 +69,46 @@ function buscaPalabras(words, word) {
     }, [])
     return SearchLonger;
 }
+/*Matrices
+ 
+ Recibimos una matriz de cadenas de texto. Tenemos que localizar la posición de la palabra "JavaScript" en la matriz y devolver su posición como un array de dos elementos:
+ el índice de la fila y el índice de la columna.
+
+const matrix = [
+  ['HTML', 'CSS', 'JavaScript'],
+  ['Java', 'C++', 'Python'],
+  ['Ruby', 'Go', 'Swift']
+]
+
+const position = findJavaScript(matrix)
+console.log(position) // -> [0, 2]
+
+Si no encuentra la palabra debe devolver [-1, -1].
+ */
+
+//Usando for of por practicar aunque no es ideal por no poder usar índices
+function findJavaScript(matrix) {
+    let y = -1
+    for (let arrayInY of matrix) {
+        y++
+        let x=-1
+        for (let arrayInX of arrayInY) {
+            x++
+            if (arrayInX === "JavaScript") {
+                return [y,x]
+            }
+        }
+    }       
+    return [-1, -1]    
+}
+//Usando for:
+function findJavaScript(matrix) {
+    for (let y = 0; y < matrix.length; y++) {
+        for (let x = 0; x < matrix[y].length; x++) {
+            if (matrix[y][x] === "JavaScript") {
+                return [y, x];
+            }
+        }
+    }
+    return [-1, -1];
+}
