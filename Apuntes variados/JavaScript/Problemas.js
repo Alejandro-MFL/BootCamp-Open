@@ -182,3 +182,44 @@ function getBooleanKeys(obj) {
     return Object.keys(obj).filter(key => typeof obj[key] === "boolean");
 }
 
+/*Operador de Encadenamiento Opcional
+ 
+ Somos un equipo de submarinistas. Estamos explorando el fondo marino pero no sabemos qué nos vamos a encontrar porque vamos casi a ciegas. Vamos con un pequeño robot y funciona con un programa que recibe tres parámetros:
+
+-Un objeto con la información del fondo marino
+-Una cadena de texto con el nombre del lugar que queremos explorar
+-Una cadena de texto con el nombre del objeto que queremos encontrar
+
+Por ejemplo. Con el objeto ocean que nos llega como primer parámetro, podemos explorar el lugar deep y buscar el objeto treasure. Así que intentaríamos acceder a ocean.deep.treasure.
+Si lo encontramos el robot nos devuelve true y si no lo encuentra nos devuelve false. Sólo necesitamos saber si lo hemos encontrado o no, no necesitamos saber su valor.
+Vamos a necesitar asegurarnos que el robot no se rompa, que cuesta mucho dinero, en el caso que no pueda encontrar el lugar o el objeto que le hemos pedido.
+Así que vamos a usar el operador de encadenamiento opcional para evitar errores.
+Pista: ¡Recuerda que en una clase anterior hemos visto cómo podemos acceder a una propiedad de un objeto usando una variable! 
+Por ejemplo, si tenemos un objeto person y una variable key con el valor name, podemos acceder a la propiedad name del objeto person usando person[key] y sería como hacer person.name.
+ */
+
+function searchInOcean(ocean, section, item) {
+    return ocean[section]?.[item] !== undefined;
+}
+
+/*
+ *
+ Vamos a experimentar con valor y referencia. Tienes una función updateStats que recibe dos argumentos: un número level y un objeto character.
+Dentro de la función:
+Incrementa el level en 1. Cambia la propiedad status del objeto character a 'active'. Fuera de la función:
+Declara una variable currentLevel inicializada en 5. Declara un objeto player con las propiedades name:
+'Hero' y status: 'inactive'. Llama a updateStats pasándole currentLevel y player. 
+Imprime por consola el valor de currentLevel y el objeto player después de llamar a la función. Observa qué valores han cambiado y cuáles no. La función debe devolver el objeto character modificado.
+ */
+function updateStats(level, character) {
+    level++
+    character.status = "active"
+    return character
+}
+let currentLevel = 5
+let player = {
+    name: "Hero",
+    status: "inactive"
+}
+updateStats(currentLevel, player)
+console.log(currentLevel, player)
