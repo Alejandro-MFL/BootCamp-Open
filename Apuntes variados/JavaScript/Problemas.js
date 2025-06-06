@@ -287,3 +287,31 @@ function reemplazar(frase, palabraOriginal, palabraNueva) {
 
 console.log(reemplazar("Me gusta el chocolate", "chocolate", "helado"));
 // "Me gusta el helado"
+
+// Crea una función que calcule la media de una lista de números
+
+function calcularMedia(lista) {
+    // Tu código aquí
+    if (lista.length === 0) return 0;
+    let suma = 0;
+    for (let num of lista) {
+        suma += num;
+    }
+    return suma / lista.length;
+}
+
+console.log(calcularMedia([5, 10, 15])); // 10
+
+// Dado un número, imprime su tabla del 1 al 10
+
+function tablaMultiplicar(numero) {
+    // Tu código aquí
+    function tablaMultiplicar(numero) {
+        for (let i = 1; i <= 10; i++) {
+            console.log(`${numero} x ${i} = ${numero * i}`);
+        }
+    }
+
+}
+
+tablaMultiplicar(5);
