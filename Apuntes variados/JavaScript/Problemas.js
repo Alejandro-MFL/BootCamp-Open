@@ -252,3 +252,38 @@ function contarLetra(frase, letra) {
 
 console.log(contarLetra("Javascript es genial", "a")); // Debería devolver 3
 
+// Una palabra palíndroma se lee igual al derecho que al revés
+// Ejemplo: "oso", "reconocer"
+
+function esPalindromo(palabra) {
+    // Tu código aquí
+    const invertida = palabra.split("").reverse().join("");
+    return palabra === invertida;
+
+}
+
+console.log(esPalindromo("reconocer")); // true
+console.log(esPalindromo("javascript")); // false
+
+// Dado el siguiente array de personas, devuelve un nuevo array solo con los mayores de edad
+
+const personas = [
+    { nombre: "Ana", edad: 17 },
+    { nombre: "Luis", edad: 22 },
+    { nombre: "Carlos", edad: 15 },
+    { nombre: "Lucía", edad: 30 }
+];
+
+// Tu código aquí
+const mayores = personas.filter(persona => persona.edad >= 18);
+
+console.log(mayores); // [{nombre: "Luis", edad: 22}, {nombre: "Lucía", edad: 30}]
+// Escribe una función que reemplace todas las ocurrencias de una palabra por otra
+
+function reemplazar(frase, palabraOriginal, palabraNueva) {
+    // Tu código aquí
+    return frase.split(palabraOriginal).join(palabraNueva);
+}
+
+console.log(reemplazar("Me gusta el chocolate", "chocolate", "helado"));
+// "Me gusta el helado"
