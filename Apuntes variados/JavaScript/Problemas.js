@@ -311,7 +311,7 @@ function tablaMultiplicar(numero) {
             console.log(`${numero} x ${i} = ${numero * i}`);
         }
     }
-
+ 
 }
 
 tablaMultiplicar(5);
