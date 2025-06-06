@@ -223,3 +223,32 @@ let player = {
 }
 updateStats(currentLevel, player)
 console.log(currentLevel, player)
+
+// Dado el siguiente array, suma solo los números pares
+const numeros = [1, 4, 7, 10, 13, 16];
+
+let sumaPares = 0;
+// Tu código aquí
+for (let i = 0; i < numeros.length; i++) {
+    if (numeros[i] % 2 === 0) {
+        sumaPares += numeros[i];
+    }
+}
+
+console.log("Suma de pares:", sumaPares);
+
+// Escribe una función que reciba una frase y una letra, y cuente cuántas veces aparece esa letra
+
+function contarLetra(frase, letra) {
+    // Tu código aquí
+    let contador = 0;
+    for (let char of frase) {
+        if (char.toLowerCase() === letra.toLowerCase()) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+console.log(contarLetra("Javascript es genial", "a")); // Debería devolver 3
+
